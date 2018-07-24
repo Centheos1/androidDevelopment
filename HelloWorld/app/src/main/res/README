@@ -1,0 +1,11 @@
+#To run emulator
+emulator @Nexus_6P_API_28
+
+#To reboot physical device
+adb reboot
+
+# Manage devices systems
+monitor
+
+# Create projects
+android create project --target 1 --name MyAndroidApp --path ./MyAndroidAppProject --activity MainActivity --package com.example.myandroidapp
