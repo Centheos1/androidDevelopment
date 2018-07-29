@@ -8,8 +8,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+
+import static com.mad.exercise1.R.id.firstName;
 
 public class MainActivity extends AppCompatActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +29,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+
+        Button submitBtn = (Button) findViewById(R.id.submit);
+        submitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EditText et_firstName = (EditText) findViewById(R.id.firstName);
+                EditText et_lastName = (EditText) findViewById(R.id.lastName);
+                String firstName = et_firstName.getText().toString();
+                String lastName = et_lastName.getText().toString();
+                Snackbar.make(view, "Welcome "+firstName+" "+lastName+"!", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
